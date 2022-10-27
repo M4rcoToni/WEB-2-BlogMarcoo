@@ -1,0 +1,50 @@
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+}
+.logo, .banner , footer{
+    text-align: center;
+    background-color:#262624;
+}
+
+li{
+    display: inline;
+}
+#categorias{
+    background-color:#7ED957;
+    padding-top: 12px;
+    margin-bottom: 10px;
+    text-decoration:none;
+    align-items: center;
+    text-align: center;
+
+}
+
+.menu{
+    color: white;
+}
+ul{
+    list-style: none;
+    font-size: 18px;
+}
+ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration:none;
+    margin-right: 85px;
+    margin-left: 85px;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+    display: block;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+.tipos ul li>a:hover {
+    background-size: 100% 3px;
+    color: white;
+    text-decoration:none;
+}
