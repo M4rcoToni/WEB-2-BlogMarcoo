@@ -5,7 +5,13 @@ import org.springframework.stereotype.Repository;
 
 import com.example.web2.model.Postagens;
 
+import java.util.List;
+
 @Repository
-public interface RepositoryPostagens extends JpaRepository<Postagens, Integer>{
-    
+public interface RepositoryPostagens extends JpaRepository<Postagens, Integer> {
+    List<Postagens> findPostagensByTituloLike(String titulo);
+
+    List<Postagens> findFirstByOrderByIdDesc();
+
+    List<Postagens> findPostagensByTipo(int tipo);
 }

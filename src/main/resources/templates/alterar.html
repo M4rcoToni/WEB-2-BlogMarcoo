@@ -31,10 +31,6 @@
                             <li><a th:href="@{/index}" class="menu">Home</a></li>
                             <li><a th:href="@{/save}" class="menu">Nova Postagem</a></li>
                             <li><a th:href="@{/postagens}" class="menu">Postagens</a></li>
-                            <li> <form action="/pesquisar" method="post">
-                                <li><input type="text" name="pesquisar" class="form-control"></li>
-                                <button type="submit" class="btn btn-success">Pesquisar</button>
-                           </form></li>
                         </ul>
                     </div>
                 </div>
@@ -43,37 +39,35 @@
     </div>
 
     <div class="container">
-        <p class="fs-2 mt-4">Veja uma Postagem especifica!</p>
-        <div class="row m-3">
+        <p class="fs-2 mt-4">Envie sua postagem para o Blog!</p>
+        
+        <div class="">
+            <th:block th:include="mensagemValidacao"></th:block>
+    
+            <form method="post" enctype="multipart/form-data">
+               
+                <div class="m-3 fs-5">
+                    <label for="titulo">Título</label>
+                    <input th:value=${titulo} type="text" class="form-control mt-2" id="titulo" name="titulo" placeholder="Título *">
+                </div>
+                <div class="m-3 fs-5">
+                    <label for="autor">Autor</label>
+                    <input th:value=${autor} type="text" class="form-control mt-2" id="autor" name="autor" placeholder="Autor *">
+                </div>
+                <div class="m-3 fs-5">
+                    <label for="texto">Conteudo</label>
+                    <textarea th:text=${conteudo} class="form-control mt-2" id="conteudo" name="conteudo" placeholder="Conteudo *"></textarea>
+                </div>
+                <div class="m-3 fs-5">
+                    <label for="tipo">Tipo</label>
+                    <input th:value=${tipo} type="text" class="form-control mt-2" id="tipo" name="tipo" placeholder="Tipo *">
+                </div>
 
-            <div class="">
-                <span class="fs-4">Titulo: </span>
-                <span class="fs-5 p-3" th:text="${titulo}"></span>
-            </div>
-            <div>
-                <span class="fs-4">Autor: </span>
-                <span class="fs-5 p-3" th:text="${autor}"></span>
-            </div>
-
-            <div>
-                <span class="fs-4">Conteudo: </span>
-                <span class="fs-5 p-3" th:text="${conteudo}"></span>
-            </div>
-            <div>
-                <span class="fs-4">Data: </span>
-                <span class="fs-5 p-3" th:text="${data}"></span>
-            </div>
-            <div>
-                <span class="fs-4">Imagem: </span>
-                <img th:if="${imagem != null}" th:src="@{/img/{imagem}(imagem=${imagem})}" class="card-img-top" alt="img">
-            </div>
+                <button type="submit" class="btn btn-success m-3">Enviar Postagen</button>
+            </form>
         </div>
-
-    </div>
-
+    
     <script type="text/javascript" src="js/bootstrap.bundle.min.js">
     </script>
-
+    
 </body>
-
-</html>
